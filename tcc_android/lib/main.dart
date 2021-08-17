@@ -1,28 +1,60 @@
 import 'package:flutter/material.dart';
-void main() => runApp(TCChomepage());
+import 'screens/home_screen.dart';
+import 'screens/comparation_screen.dart';
+import 'screens/tutorial_screen.dart';
 
+void main() => runApp(MyHomePage());
 
-
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-          canvasColor: Color.fromRGBO(231, 236, 239, 1),
-          primaryColor: Color.fromRGBO(252, 186, 3, 1),
+      home: TabsScreen(),
+    );
+  }
+}
+
+class TabsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      initialIndex: 1,
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(239, 119, 28, 1),
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                text: 'Tutorial',
+                icon: Icon(
+                  Icons.book_outlined,
+                ),
+              ),
+              Tab(
+                text: 'Home',
+                icon: Icon(
+                  Icons.monetization_on_outlined,
+                ),
+              ),
+              Tab(
+                text: 'Comparation',
+                icon: Icon(
+                  Icons.bar_chart_rounded,
+                ),
+              ),
+            ],
+          ),
+          title: Text('OudriKandaLarrai'),
         ),
-        title: 'Virtua\'let',
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('Virtua\'let'),
-          ),
-          body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage("assets/images/backgroundTCC.png")),
-            ),
-          ),
-        ));
+        body: TabBarView(
+          children: [
+            TutorialScreen(),
+            HomeScreen(),
+            ComparationScreen(),
+          ],
+        ),
+      ),
+    );
   }
 }

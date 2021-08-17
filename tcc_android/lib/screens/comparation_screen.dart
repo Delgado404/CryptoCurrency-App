@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Tutorial extends StatelessWidget {
+class ComparationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Tela de tutorial'),
+      child: Text('Comparar moedas'),
     );
   }
 }
