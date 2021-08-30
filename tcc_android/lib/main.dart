@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tcc_android/screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/comparation_screen.dart';
 import 'screens/tutorial_screen.dart';
@@ -9,7 +10,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: TabsScreen(),
+      home: WelcomeScreen(),
     );
   }
 }
