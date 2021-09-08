@@ -1,7 +1,9 @@
 import 'package:tcc_android/main.dart';
+import 'package:tcc_android/screens/tabs_screen.dart';
+import 'package:tcc_android/screens/welcome_screen.dart';
 import '../screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:tcc_android/screens/tabs_screenT.dart';
+import 'dart:ffi';
 
 class Body extends StatelessWidget {
   @override
@@ -59,10 +61,8 @@ class Body extends StatelessWidget {
           Padding(padding: EdgeInsets.all(50)),
           TextButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => TabsScreenT()),
-                );
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MainPage()));
               },
               child: Text('Continuar',
                   textAlign: TextAlign.center,

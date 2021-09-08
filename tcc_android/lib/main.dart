@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:tcc_android/screens/login_screen.dart';
 import 'package:tcc_android/screens/welcome_screen.dart';
+import 'package:tcc_android/screens/tutorial_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/comparation_screen.dart';
 import 'screens/tutorial_screen.dart';
+import 'screens/login_screen.dart';
+import 'screens/tabs_screen.dart';
+import 'dart:ffi';
 
 void main() => runApp(MyHomePage());
 
@@ -15,47 +20,35 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-class TabsScreen extends StatelessWidget {
+class MainPage extends StatefulWidget {
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int index = 0;
+
+  final pages = <Widget>[
+    LoginScreen(),
+    ComparationScreen(),
+    WelcomeScreen(),
+    tutorialscreen(),
+  ];
+
   @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 3,
-      initialIndex: 1,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color.fromRGBO(239, 119, 28, 1),
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                text: 'Tutorial',
-                icon: Icon(
-                  Icons.book_outlined,
-                ),
-              ),
-              Tab(
-                text: 'Home',
-                icon: Icon(
-                  Icons.monetization_on_outlined,
-                ),
-              ),
-              Tab(
-                text: 'Comparation',
-                icon: Icon(
-                  Icons.bar_chart_rounded,
-                ),
-              ),
-            ],
-          ),
-          title: Text('OudriKandaLarrai'),
+  Widget build(BuildContext context) => Scaffold(
+        extendBody: true,
+        body: pages[index],
+        bottomNavigationBar: Tabsscreen(
+          index: index,
+          onChangedTab: onChangedTab,
         ),
-        body: TabBarView(
-          children: [
-            TutorialScreen(),
-            HomeScreen(),
-            ComparationScreen(),
-          ],
-        ),
-      ),
-    );
+      );
+
+  void onChangedTab(int index) {
+    setState(() {
+      this.index = index;
+    });
   }
 }
+
+class TutorialScreen {}

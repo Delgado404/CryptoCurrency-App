@@ -1,46 +1,52 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
-import 'comparation_screen.dart';
-import 'tutorial_screen.dart';
 
-class TabsScreen extends StatelessWidget {
+class Tabsscreen extends StatefulWidget {
+  final int index;
+  final ValueChanged<int> onChangedTab;
+
+  const Tabsscreen({
+    required this.index,
+    required this.onChangedTab,
+  });
+
+  // ignore: empty_constructor_bodies
+  @override
+  _TabsscreenState createState() => _TabsscreenState();
+}
+
+class _TabsscreenState extends State<Tabsscreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('OudriKandaLarrai'),
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  text: 'Home',
-                  icon: Icon(
-                    Icons.monetization_on_outlined,
-                  ),
-                ),
-                Tab(
-                  text: 'Tutorial',
-                  icon: Icon(
-                    Icons.book_outlined,
-                  ),
-                ),
-                Tab(
-                  text: 'Comparation',
-                  icon: Icon(
-                    Icons.bar_chart_rounded,
-                  ),
-                ),
-              ],
+    return BottomAppBar(
+        shape: CircularNotchedRectangle(),
+        notchMargin: 8,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            buildTabItem(index: 0, icon: Icon(Icons.login)),
+            buildTabItem(index: 1, icon: Icon(Icons.attach_money_rounded)),
+            buildTabItem(index: 2, icon: Icon(Icons.mail_outline)),
+            buildTabItem(
+              index: 3,
+              icon: Icon(Icons.settings),
             ),
-          ),
-          body: TabBarView(
-            children: [
-              HomeScreen(),
-              ComparationScreen(),
-              TutorialScreen(),
-            ],
-          ),
+          ],
+        ));
+  }
+
+  Widget buildTabItem({
+    required int index,
+    required Icon icon,
+  }) {
+    final isSelected = index == widget.index;
+
+    return IconTheme(
+        data: IconThemeData(
+          color: isSelected ? Colors.red : Colors.black,
+        ),
+        child: IconButton(
+          icon: icon,
+          onPressed: () => widget.onChangedTab(index),
         ));
   }
 }
