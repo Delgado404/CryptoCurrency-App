@@ -1,5 +1,7 @@
+import 'package:tcc_android/main.dart';
 import '../screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:tcc_android/screens/tabs_screenT.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -59,7 +61,7 @@ class Body extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => TabsScreenT()),
                 );
               },
               child: Text('Continuar',
