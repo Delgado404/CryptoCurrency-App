@@ -30,8 +30,8 @@ class _MainPageState extends State<MainPage> {
   final pages = <Widget>[
     LoginScreen(),
     ComparationScreen(),
-    WelcomeScreen(),
     tutorialscreen(),
+    WelcomeScreen(),
   ];
 
   @override
