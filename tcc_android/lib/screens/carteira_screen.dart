@@ -1,12 +1,22 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tcc_android/components/body.dart';
-import 'package:tcc_android/main.dart';
-import 'tabs_screen.dart';
-import 'iniciante_screen.dart';
 
-class carteirascreen extends StatelessWidget {
+class CarteiraScreen extends StatelessWidget {
   @override
+  numberGenerator() {
+    var rng = new Random();
+    double valor;
+
+    valor = (rng.nextInt(100) + (rng.nextInt(99) / 100));
+
+    if (rng.nextInt(2) == 1)
+      return '+' + valor.toString() + '%';
+    else
+      return '-' + valor.toString() + '%';
+  }
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
@@ -58,21 +68,21 @@ class carteirascreen extends StatelessWidget {
             ),
             items: [
               Text(
-                'BTC \n +3%',
+                'BTC \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',
                 ),
               ),
               Text(
-                'ETC \n +2%',
+                'ETC \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',
                 ),
               ),
               Text(
-                'POG \n +6%',
+                'POG \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',
@@ -107,21 +117,21 @@ class carteirascreen extends StatelessWidget {
             ),
             items: [
               Text(
-                'BTC \n +3%',
+                'BTC \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',
                 ),
               ),
               Text(
-                'ETC \n +2%',
+                'ETC \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',
                 ),
               ),
               Text(
-                'POG \n +6%',
+                'POG \n' + numberGenerator().toString(),
                 style: new TextStyle(
                   fontSize: 20,
                   fontFamily: 'Ebrima',

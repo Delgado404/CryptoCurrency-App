@@ -3,17 +3,15 @@ import 'package:tcc_android/screens/login_screen.dart';
 import 'package:tcc_android/screens/moedas_screen.dart';
 import 'package:tcc_android/screens/welcome_screen.dart';
 import 'package:tcc_android/screens/tutorial_screen.dart';
-import 'screens/home_screen.dart';
-import 'screens/comparation_screen.dart';
 import 'screens/tutorial_screen.dart';
 import 'screens/login_screen.dart';
 import 'screens/tabs_screen.dart';
-import 'dart:ffi';
-import 'package:tcc_android/screens/moedas_screen.dart';
 import 'screens/carteira_screen.dart';
 import 'package:tcc_android/screens/carteira_screen.dart';
 
-void main() => runApp(MyHomePage());
+void main() {
+  runApp(MyHomePage());
+}
 
 class MyHomePage extends StatelessWidget {
   @override
@@ -35,7 +33,7 @@ class _MainPageState extends State<MainPage> {
     LoginScreen(),
     Moeda(),
     tutorialscreen(),
-    carteirascreen(),
+    CarteiraScreen(),
   ];
 
   @override

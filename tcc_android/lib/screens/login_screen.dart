@@ -1,14 +1,16 @@
-import 'dart:math';
-import 'comparation_screen.dart';
-import 'tabs_screen.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/material.dart';
-import 'package:tcc_android/main.dart';
+import 'package:tcc_android/screens/carteira_screen.dart';
 
+// ignore: must_be_immutable
 class LoginScreen extends StatelessWidget {
+  String email = '';
+  String senha = '';
+  String user = '';
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      // provavel que vá ter que mudar isso aqui
       decoration: BoxDecoration(
           color: Color.fromRGBO(45, 49, 66, 1),
           image: DecorationImage(
@@ -47,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: 'insira seu user e senha',
+                  text: 'insira seu email e senha',
                   style: TextStyle(
                     fontFamily: 'Ebrima',
                     fontSize: 20,
@@ -57,22 +59,135 @@ class LoginScreen extends StatelessWidget {
               ])),
             ],
           ),
-          Row(
-            children: [
-              Padding(padding: EdgeInsets.only(left: 40)),
-              Text(
-                'email vem aqui',
-                style: TextStyle(
-                  fontFamily: 'Ebrima',
-                  decoration: TextDecoration
-                      .none, // aparentemente se tirar o text decoration none, fica com as linhas amarelas estranhas
-                  fontSize: 20,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.normal,
+          SizedBox(
+            width: 350,
+            child: TextField(
+              onChanged: (text) {
+                email = text;
+              },
+              //text field do email
+              keyboardType: TextInputType.emailAddress,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                )),
+                hintStyle: TextStyle(color: Colors.white),
+                icon: Icon(
+                  Icons.person,
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                )),
+                labelText: 'Email ou usuário',
+                labelStyle: TextStyle(
+                  color: Colors.white,
                 ),
               ),
-            ],
+            ),
           ),
+          SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            width: 350,
+            child: TextField(
+              onChanged: (text) {
+                senha = text;
+              },
+              //text field da senha
+              obscureText: true,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                )),
+                hintStyle: TextStyle(color: Colors.white),
+                suffixIcon: Icon(Icons.visibility,
+                    color: Color.fromRGBO(252, 107, 18, 1)),
+                icon: Icon(
+                  Icons.vpn_key,
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                ),
+                enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Color.fromRGBO(252, 107, 18, 1),
+                )),
+                labelText: 'Senha',
+                labelStyle: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          Padding(padding: EdgeInsets.all(40)),
+          SizedBox(
+            height: 50,
+            width: 150,
+            child: TextButton(
+              onPressed: () {
+                if (email == 'admin@flutter.com' ||
+                    user == 'admin' && senha == '123') {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CarteiraScreen()));
+                } else {
+                  AlertDialog alert = AlertDialog(
+                    backgroundColor: Color.fromRGBO(80, 102, 140, 1),
+                    title: Text(
+                      'Erro',
+                      style: TextStyle(color: Color.fromRGBO(252, 107, 18, 1)),
+                    ),
+                    content: Text('Email ou senha incorreto',
+                        style: TextStyle(color: Colors.white)),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          'no',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text(
+                          'yes',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      )
+                    ],
+                  );
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return alert;
+                    },
+                  );
+                }
+              },
+              child: Text(
+                'Entrar',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                ),
+              ),
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0))),
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromRGBO(252, 107, 18, 1))),
+            ),
+          )
         ],
       ),
     );

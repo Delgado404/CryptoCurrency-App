@@ -1,9 +1,5 @@
 import 'package:tcc_android/main.dart';
-import 'package:tcc_android/screens/tabs_screen.dart';
-import 'package:tcc_android/screens/welcome_screen.dart';
-import '../screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'dart:ffi';
 
 class Body extends StatelessWidget {
   @override

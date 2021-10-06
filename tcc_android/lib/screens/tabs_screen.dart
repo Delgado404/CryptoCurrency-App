@@ -26,10 +26,7 @@ class _TabsscreenState extends State<Tabsscreen> {
             buildTabItem(index: 0, icon: Icon(Icons.login)),
             buildTabItem(index: 1, icon: Icon(Icons.attach_money_rounded)),
             buildTabItem(index: 2, icon: Icon(Icons.developer_board)),
-            buildTabItem(
-              index: 3,
-              icon: Icon(Icons.settings),
-            ),
+            buildTabItem(index: 3, icon: Icon(Icons.settings)),
           ],
         ));
   }
