@@ -57,6 +57,7 @@ class Body extends StatelessWidget {
           Padding(padding: EdgeInsets.all(50)),
           TextButton(
               onPressed: () {
+                // faz o botão dar na pag de login, tirei ela do menu, mas a inicial precisa levar pra ela de volta
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => MainPage()));
               },

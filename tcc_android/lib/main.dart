@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
   int index = 0;
 
   final pages = <Widget>[
-    LoginScreen(),
+    tutorialscreen(),
     Moeda(),
     tutorialscreen(),
     CarteiraScreen(),

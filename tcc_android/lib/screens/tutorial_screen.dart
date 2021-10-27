@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:tcc_android/main.dart';
+import 'package:tcc_android/screens/tuto2_screen.dart';
 import 'iniciante_screen.dart';
+import 'tuto1_screen.dart';
+import 'tuto2_screen.dart';
 
 class tutorialscreen extends StatelessWidget {
   // vou marcar onde os botões estão, de resto, só mexe pra mudar o texto
@@ -57,10 +60,8 @@ class tutorialscreen extends StatelessWidget {
                       backgroundColor: Colors.orange,
                       onPressed: () {
                         // botão aq
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => iniciante()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => tuto1()));
                       },
                     ),
                   )
@@ -96,10 +97,8 @@ class tutorialscreen extends StatelessWidget {
                       backgroundColor: Colors.orange,
                       onPressed: () {
                         // botão aq
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainPage()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => tuto2()));
                       },
                     ),
                   )
@@ -114,14 +113,14 @@ class tutorialscreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   ListTile(
-                    title: const Text('Avançado',
+                    title: const Text('Tutorial',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontFamily: 'Ebrima',
                             fontSize: 39,
                             fontWeight: FontWeight.bold)),
                     subtitle: Text(
-                      'Lorem ipsum',
+                      'Selecione uma dificuldade para começar a aprender!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Ebrima',
@@ -129,19 +128,6 @@ class tutorialscreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 100.0),
-                    child: FloatingActionButton(
-                      backgroundColor: Colors.orange,
-                      onPressed: () {
-                        //botão aq
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MainPage()));
-                      },
-                    ),
-                  )
                 ],
               ),
             );
