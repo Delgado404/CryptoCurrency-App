@@ -8,6 +8,7 @@ import 'screens/login_screen.dart';
 import 'screens/tabs_screen.dart';
 import 'screens/carteira_screen.dart';
 import 'package:tcc_android/screens/carteira_screen.dart';
+import 'screens/transferencia_screen.dart';
 
 void main() {
   runApp(MyHomePage());
@@ -30,7 +31,7 @@ class _MainPageState extends State<MainPage> {
   int index = 0;
 
   final pages = <Widget>[
-    tutorialscreen(),
+    transferencia(),
     Moeda(),
     tutorialscreen(),
     CarteiraScreen(),
