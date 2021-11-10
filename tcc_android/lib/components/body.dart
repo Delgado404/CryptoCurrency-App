@@ -46,7 +46,7 @@ class Body extends StatelessWidget {
             ]),
           ),
           Text(
-            'Frase de efeito',
+            'O melhor para seu investimento',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,

@@ -30,7 +30,7 @@ class CarteiraScreen extends StatelessWidget {
       child: new Column(
         children: [
           new Container(
-            margin: const EdgeInsets.symmetric(horizontal: 35, vertical: 80),
+            margin: const EdgeInsets.fromLTRB(0, 80, 0, 10),
             width: 320,
             height: 40,
             child: new Text('Carteira', // o + é o botão pra esconder
@@ -39,6 +39,28 @@ class CarteiraScreen extends StatelessWidget {
                     fontSize: 40,
                     fontFamily: 'Ebrima',
                     fontWeight: FontWeight.bold)),
+          ),
+          new Row(
+            children: [
+              new Container(
+                margin: const EdgeInsets.fromLTRB(0, 60, 0, 90),
+                width: 270,
+                height: 60,
+                child: new Text(
+                  'RS320,00',
+                  textAlign: TextAlign.center,
+                  style: new TextStyle(fontSize: 30, fontFamily: 'Ebrima'),
+                ),
+              ),
+              new Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 60),
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/logo_branco.png'))),
+              )
+            ],
           ),
           new Container(
             width: 200,
@@ -139,18 +161,6 @@ class CarteiraScreen extends StatelessWidget {
               ),
             ],
           ),
-          new Container(
-              width: 200,
-              height: 50,
-              child: new Text(
-                'Histórico',
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                    fontSize: 25,
-                    fontFamily: 'Ebrima',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.grey),
-              )),
         ],
       ),
     );

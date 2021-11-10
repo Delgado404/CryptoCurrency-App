@@ -39,6 +39,32 @@ class tutorialscreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   ListTile(
+                    title: const Text('Tutorial',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'Ebrima',
+                            fontSize: 39,
+                            fontWeight: FontWeight.bold)),
+                    subtitle: Text(
+                      'Selecione uma dificuldade para começar a aprender!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Ebrima',
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
+          Builder(builder: (BuildContext context) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                children: <Widget>[
+                  ListTile(
                     title: const Text('Iniciante',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -46,7 +72,7 @@ class tutorialscreen extends StatelessWidget {
                             fontSize: 39,
                             fontWeight: FontWeight.bold)),
                     subtitle: Text(
-                      'Lorem Ipsum',
+                      'É aqui que começamos!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Ebrima',
@@ -83,7 +109,7 @@ class tutorialscreen extends StatelessWidget {
                             fontSize: 39,
                             fontWeight: FontWeight.bold)),
                     subtitle: Text(
-                      'Lorem ipsum',
+                      'Vamos entender melhor!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Ebrima',
@@ -102,32 +128,6 @@ class tutorialscreen extends StatelessWidget {
                       },
                     ),
                   )
-                ],
-              ),
-            );
-          }),
-          Builder(builder: (BuildContext context) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    title: const Text('Tutorial',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontFamily: 'Ebrima',
-                            fontSize: 39,
-                            fontWeight: FontWeight.bold)),
-                    subtitle: Text(
-                      'Selecione uma dificuldade para começar a aprender!',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Ebrima',
-                        fontSize: 20,
-                      ),
-                    ),
-                  ),
                 ],
               ),
             );
