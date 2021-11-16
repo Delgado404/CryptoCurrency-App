@@ -1,5 +1,6 @@
 import 'package:tcc_android/main.dart';
 import 'package:flutter/material.dart';
+import 'package:tcc_android/screens/login_screen.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -59,7 +60,7 @@ class Body extends StatelessWidget {
               onPressed: () {
                 // faz o botão dar na pag de login, tirei ela do menu, mas a inicial precisa levar pra ela de volta
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MainPage()));
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
               },
               child: Text('Continuar',
                   textAlign: TextAlign.center,

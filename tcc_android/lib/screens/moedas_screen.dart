@@ -14,37 +14,46 @@ class Moeda extends StatelessWidget {
               image: AssetImage('assets/images/backgroundTCC.png'))),
       child: Column(
         children: [
-          SizedBox(
-            height: 70,
+          new Container(
+            margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+            width: 320,
+            height: 40,
+            child: Text('Moedas',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 40,
+                    fontFamily: 'Ebrima',
+                    fontWeight: FontWeight.bold)),
           ),
-          Text('Moedas',
-              style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'Ebrima',
-                  fontWeight: FontWeight.bold)),
-          SizedBox(
-            height: 50,
-          ),
-          Text('Bitcoin',
-              style: TextStyle(
-                  fontSize: 30,
-                  fontFamily: 'Ebrima',
-                  fontWeight: FontWeight.bold)),
-          SizedBox(
-            height: 300,
-            width: 1000,
-            child: Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(32),
-              ),
-              color: const Color(0xff020227),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 16),
-                child: LineChartWidget(),
+          new Container(
+              padding: EdgeInsets.fromLTRB(20, 10, 270, 0),
+              child: DropdownButton<String>(
+                items: <String>['BTC', 'B', 'C'].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (_) {},
+              )),
+          Container(
+            padding: EdgeInsets.fromLTRB(40, 0, 10, 0),
+            child: SizedBox(
+              height: 300,
+              width: 500,
+              child: Card(
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0),
+                ),
+                color: const Color(0x00000000),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: LineChartWidget(),
+                ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );
