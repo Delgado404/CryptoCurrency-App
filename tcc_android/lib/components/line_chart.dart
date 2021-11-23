@@ -10,19 +10,60 @@ class LineChartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LineChart(
         LineChartData(
+          titlesData: FlTitlesData(
+              bottomTitles: SideTitles(
+                  showTitles: true,
+                  getTextStyles: (context, value) =>
+                      const TextStyle(fontSize: 10),
+                  getTitles: (value) {
+                    switch (value.toInt()) {
+                      case 0:
+                        return '00:00';
+                      case 3:
+                        return '03:00';
+                      case 6:
+                        return '06:00';
+                      case 9:
+                        return '09:00';
+                      case 11:
+                        return '11:00';
+                    }
+                    return '';
+                  }),
+              leftTitles: SideTitles(showTitles: false),
+              rightTitles: SideTitles(
+                  showTitles: true,
+                  getTextStyles: (context, value) =>
+                      const TextStyle(fontSize: 10),
+                  getTitles: (value) {
+                    switch (value.toInt()) {
+                      case 1:
+                        return '50';
+                      case 2:
+                        return '55';
+                      case 3:
+                        return '60';
+                      case 4:
+                        return '65';
+                      case 5:
+                        return '70';
+                    }
+                    return '';
+                  }),
+              topTitles: SideTitles(showTitles: false)),
           minX: 0,
           maxX: 11,
           minY: 0,
           maxY: 6,
           gridData: FlGridData(
-            show: true,
+            show: false,
             getDrawingHorizontalLine: (value) {
               return FlLine(
                 color: const Color(0xff37434d),
                 strokeWidth: 1,
               );
             },
-            drawVerticalLine: true,
+            drawVerticalLine: false,
             getDrawingVerticalLine: (value) {
               return FlLine(
                 color: const Color(0xff37434d),
@@ -45,9 +86,9 @@ class LineChartWidget extends StatelessWidget {
                 FlSpot(9.5, 3),
                 FlSpot(11, 4),
               ],
-              isCurved: true,
+              isCurved: false,
               colors: gradientColors,
-              barWidth: 5,
+              barWidth: 3,
               // dotData: FlDotData(show: false),
               belowBarData: BarAreaData(
                 show: true,

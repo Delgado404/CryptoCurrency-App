@@ -1,22 +1,10 @@
 import 'dart:math';
-
+import '../utils/rng.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class CarteiraScreen extends StatelessWidget {
   @override
-  numberGenerator() {
-    var rng = new Random();
-    double valor;
-
-    valor = (rng.nextInt(100) + (rng.nextInt(99) / 100));
-
-    if (rng.nextInt(2) == 1)
-      return '+' + valor.toString() + '%';
-    else
-      return '-' + valor.toString() + '%';
-  }
-
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(

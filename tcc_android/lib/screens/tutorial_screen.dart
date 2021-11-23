@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tcc_android/main.dart';
 import 'package:tcc_android/screens/tuto2_screen.dart';
-import 'iniciante_screen.dart';
 import 'tuto1_screen.dart';
 import 'tuto2_screen.dart';
 
