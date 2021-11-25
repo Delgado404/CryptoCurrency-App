@@ -3,22 +3,13 @@ import 'package:intl/intl.dart';
 import 'package:tcc_android/models/dados_historico.dart';
 
 class Historico extends StatelessWidget {
-  final List<DadosHistorico> historico;
-  final String nome;
-  final double valor;
-  final DateTime data;
-
-  Historico(
-    this.historico,
-    this.nome,
-    this.valor,
-    this.data,
-  );
+  final List<DadosHistorico> dados_historico;
+  Historico(this.dados_historico);
 
   @override
   Widget build(BuildContext context) {
     Container(
-      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 200),
+      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
       width: 240,
       height: 50,
       child: new Text(
@@ -32,7 +23,7 @@ class Historico extends StatelessWidget {
       ),
     );
     return Column(
-      children: historico.map((hist) {
+      children: dados_historico.map((hist) {
         return Container(
           width: 370,
           child: Card(

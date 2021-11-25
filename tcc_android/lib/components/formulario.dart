@@ -9,13 +9,14 @@ class Formulario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           width: 140,
           height: 80,
           child: TextField(
+            controller: valorController,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
                 hintText: 'Quanto', border: UnderlineInputBorder()),
@@ -26,26 +27,15 @@ class Formulario extends StatelessWidget {
           width: 140,
           height: 80,
           child: TextField(
+            controller: nomeController,
             textAlign: TextAlign.center,
             decoration: InputDecoration(
                 hintText: 'Para quem?', border: UnderlineInputBorder()),
           ),
         ),
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-          padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
-          width: 350,
-          height: 50,
-          child: Row(
-            children: [
-              Padding(padding: EdgeInsets.fromLTRB(0, 2, 5, 2)),
-            ],
-          ),
-        ),
-        Container(
-          color: Colors.black,
           margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-          width: 160,
+          width: 300,
           height: 40,
           child: TextButton(
             onPressed: () {

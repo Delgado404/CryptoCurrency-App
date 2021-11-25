@@ -37,58 +37,65 @@ class _transferenciaState extends State<transferencia> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-        height: size.height,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/images/backgroundTCC.png'))),
-        alignment: Alignment.topCenter,
-        child: new Column(
-          children: [
-            new Container(
-              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
-              width: 320,
-              height: 40,
-              child: new Text(
-                'Transferência',
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                    fontSize: 40,
-                    fontFamily: 'Ebrima',
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            new Container(
-              margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 0),
-              padding: EdgeInsets.fromLTRB(20, 3, 2, 3),
-              width: 320,
-              height: 40,
-              child: Row(
-                children: [
-                  new Text(
-                    'BTC',
+
+    return MaterialApp(
+        home: Container(
+            height: size.height,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images/backgroundTCC.png'))),
+            alignment: Alignment.topCenter,
+            child: new Column(
+              children: [
+                new Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 80),
+                  width: 320,
+                  height: 40,
+                  child: new Text(
+                    'Transferência',
+                    textAlign: TextAlign.center,
                     style: new TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'Ebrima',
-                    ),
+                        fontSize: 40,
+                        fontFamily: 'Ebrima',
+                        fontWeight: FontWeight.bold),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(140, 1, 1, 1),
-                    child: new Text(
-                      'RS32,20',
-                      style: new TextStyle(
-                        fontSize: 20,
-                        color: Colors.grey[700],
+                ),
+                new Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+                  padding: EdgeInsets.fromLTRB(20, 3, 2, 3),
+                  width: 320,
+                  height: 40,
+                  child: Row(
+                    children: [
+                      new Text(
+                        'BTC',
+                        style: new TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Ebrima',
+                        ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Formulario(_addTransferencia),
-          ],
-        ));
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(140, 1, 1, 1),
+                        child: new Text(
+                          'RS32,20',
+                          style: new TextStyle(
+                            fontSize: 20,
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
+                Formulario(
+                    _addTransferencia), // TRANSACTIONFORM(_ADDTRANSACTION)
+                Historico(historico),
+              ],
+            )));
   }
 }
