@@ -1,4 +1,3 @@
-import 'package:tcc_android/main.dart';
 import 'package:flutter/material.dart';
 import 'package:tcc_android/screens/login_screen.dart';
 

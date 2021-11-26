@@ -1,10 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class LineChartWidget extends StatelessWidget {
+class LineChartWidget4 extends StatelessWidget {
   final List<Color> gradientColors = [
-    const Color.fromRGBO(252, 107, 18, 1),
-    const Color.fromRGBO(240, 161, 80, 1),
+    const Color.fromRGBO(219, 55, 145, 1),
+    const Color.fromRGBO(219, 125, 145, 1),
   ];
 
   final lineChartWidget = LineChart;
