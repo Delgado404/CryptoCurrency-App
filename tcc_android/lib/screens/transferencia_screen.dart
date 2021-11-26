@@ -47,7 +47,7 @@ class _transferenciaState extends State<transferencia> {
                     fit: BoxFit.cover,
                     image: AssetImage('assets/images/backgroundTCC.png'))),
             alignment: Alignment.topCenter,
-            child: new Column(
+            child: new ListView(
               children: [
                 new Container(
                   margin:
@@ -58,6 +58,8 @@ class _transferenciaState extends State<transferencia> {
                     'Transferência',
                     textAlign: TextAlign.center,
                     style: new TextStyle(
+                        color: Colors.black,
+                        decoration: TextDecoration.none,
                         fontSize: 40,
                         fontFamily: 'Ebrima',
                         fontWeight: FontWeight.bold),
@@ -74,6 +76,8 @@ class _transferenciaState extends State<transferencia> {
                       new Text(
                         'BTC',
                         style: new TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.none,
                           fontSize: 30,
                           fontFamily: 'Ebrima',
                         ),
@@ -83,6 +87,7 @@ class _transferenciaState extends State<transferencia> {
                         child: new Text(
                           'RS32,20',
                           style: new TextStyle(
+                            decoration: TextDecoration.none,
                             fontSize: 20,
                             color: Colors.grey[700],
                           ),
@@ -91,7 +96,6 @@ class _transferenciaState extends State<transferencia> {
                     ],
                   ),
                 ),
-
                 Formulario(
                     _addTransferencia), // TRANSACTIONFORM(_ADDTRANSACTION)
                 Historico(historico),

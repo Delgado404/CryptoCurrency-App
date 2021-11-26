@@ -31,7 +31,7 @@ class tuto1 extends StatelessWidget {
               subtitle: Text(
                 'A seguir, vamos explicar como começar nesse meio, desde o que são as tão faladas criptomoedas até como ter sua própria carteira virutal.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -55,7 +55,7 @@ class tuto1 extends StatelessWidget {
               subtitle: Text(
                 'As criptomoedas são códigos criptografados que possuem valores monetários variáveis, ou seja, podem subir ou descer de preço. Elas também podem ser centralizadas ou não, e são validadas pela blockchain. Alguns exemplos que podemos citar são a Bitcoin, Ethereum, Ada entre outras.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -79,7 +79,7 @@ class tuto1 extends StatelessWidget {
               subtitle: Text(
                 'A Blockchain é um sistema que permite a realização de transações de criptomoedas. São pedaços de código gerados online que carregam informações conectadas, como uma cadeia de blocos que contém dados. Falando de forma simples, ela funciona como um livro de registros, a qual insere qualquer transferência ou troca feita. Assim, ela rastreia e verifica o caminho que uma criptomoeda percorre, o que garante a segurança do processo de compra, venda ou troca.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -103,7 +103,7 @@ class tuto1 extends StatelessWidget {
               subtitle: Text(
                 'Qualquer um pode ganhar dinheiro realizando transações de criptomoedas. Como o valor de cada moeda flutua, existe o momento certo para lucrar na compra e venda da mesma. Por isso, é preciso ficar atento com os preços variando, para comprar as moedas com o preço menor e vender com o maior preço. Além disso, você pode usar algumas criptomoedas para fazer compras em certas empresas ou até mesmo países. Também há a mineração de criptomoedas, que exige alguns componentes mais potentes em quesito de hardware.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -127,7 +127,7 @@ class tuto1 extends StatelessWidget {
               subtitle: Text(
                 'Você pode acessar as moedas que tem interesse pela sua carteira, onde é possível ver a quantidade de uma moeda que você possui, o valor atual delas e a variação do preço em porcentagem nas últimas horas. Você também terá acesso a um gráfico para observar essa variação. É recomendado que analise bem o gráfico antes de comprar ou vender uma moeda. Fique atento nas notícias, as quais você pode declarar moedas de seu interesse, e assim, será indicado notícias que influenciam em algo relacionado a moeda. Preste atenção, porque mesmo coisas simples podem alterar o valor de moedas.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             ),
             TextButton(

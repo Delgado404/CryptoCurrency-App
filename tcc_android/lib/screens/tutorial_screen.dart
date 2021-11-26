@@ -63,7 +63,7 @@ class tutorialscreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   ListTile(
-                    title: const Text('Iniciante',
+                    title: const Text('Introdução a criptomoedas',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontFamily: 'Ebrima',
@@ -100,7 +100,7 @@ class tutorialscreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   ListTile(
-                    title: const Text('Intermediário',
+                    title: const Text('Segurança e Cuidados',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontFamily: 'Ebrima',

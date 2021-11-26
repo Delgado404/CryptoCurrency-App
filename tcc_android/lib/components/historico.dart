@@ -24,33 +24,35 @@ class Historico extends StatelessWidget {
     );
     return Column(
       children: dados_historico.map((hist) {
-        return Container(
-          width: 370,
-          child: Card(
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(10),
-                  margin: EdgeInsets.symmetric(horizontal: 40),
-                  child: Text(
-                    hist.nome,
-                    style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      hist.valor.toString(),
-                      style: TextStyle(
-                          fontFamily: 'Ebrima',
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold),
+        return SingleChildScrollView(
+          child: Container(
+            width: 370,
+            child: Card(
+              child: Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.symmetric(horizontal: 40),
+                    child: Text(
+                      hist.nome,
+                      style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
                     ),
-                    Text(DateFormat('dd/MM/yyyy').format(hist.data)),
-                  ],
-                ),
-              ],
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        hist.valor.toString(),
+                        style: TextStyle(
+                            fontFamily: 'Ebrima',
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(DateFormat('dd/MM/yyyy').format(hist.data)),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );

@@ -31,7 +31,7 @@ class tuto2 extends StatelessWidget {
               subtitle: Text(
                 'Agora, vamos explicar os cuidados que devem ser tomados quando falamos sobre criptomoedas e carteiras virtuais.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -55,7 +55,7 @@ class tuto2 extends StatelessWidget {
               subtitle: Text(
                 'Existem várias formas de golpe que envolvem criptomoedas, por isso é necessário estar atento ao que for fazer. Um exemplo são as carteiras falsas. As carteiras foram feitas para “guardar” suas criptomoedas de forma segura. Apesar de serem programadas com essa finalidade, existem ainda as falsas, que tem acesso a seus dados registrados, desde os pessoais até suas economias. Para evitar esse tipo de problema, basta evitar aplicativos recém-lançados e desconhecidos. Procure usar plataformas conhecidas e populares, além de avaliações de fontes seguras e recomendações.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],
@@ -79,7 +79,7 @@ class tuto2 extends StatelessWidget {
               subtitle: Text(
                 'Também existem golpes diretos, como phishing. Esse golpe se baseia em uma forma de roubar seus dados a partir de um “bait”. Esse termo é utilizado por causa da forma que agem. Eles criam uma “isca” para você ser enganado e compartilhar seus dados, podendo ser a partir de um e-mail se passando pela empresa da carteira ou da criptomoeda, ou por uma pessoa que você conheça. Por isso, não abra nenhum link ou e-mail suspeito, nem coloque os seus dados sem saber se a fonte é segura, e sempre desconfie desses meios.',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Ebrima', fontSize: 15),
+                style: TextStyle(fontFamily: 'Ebrima', fontSize: 17),
               ),
             )
           ],

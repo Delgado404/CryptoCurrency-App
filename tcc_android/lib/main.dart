@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
     transferencia(),
     Moeda(),
     tutorialscreen(),
-    CarteiraScreen(),
+    Carteira(),
   ];
 
   @override

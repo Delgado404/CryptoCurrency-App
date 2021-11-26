@@ -2,7 +2,19 @@ import '../utils/rng.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class CarteiraScreen extends StatelessWidget {
+class Carteira extends StatefulWidget {
+  CarteiraScreen createState() => CarteiraScreen();
+}
+
+class CarteiraScreen extends State<Carteira> {
+  bool _visible = true;
+
+  void _toggle() {
+    setState(() {
+      _visible = !_visible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -33,20 +45,18 @@ class CarteiraScreen extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(0, 60, 0, 90),
                 width: 270,
                 height: 60,
-                child: new Text(
-                  'RS320,00',
-                  textAlign: TextAlign.center,
-                  style: new TextStyle(fontSize: 30, fontFamily: 'Ebrima'),
-                ),
+                child: new Visibility(
+                    visible: _visible,
+                    child: Text(
+                      'RS320,00',
+                      textAlign: TextAlign.center,
+                      style: new TextStyle(fontSize: 30, fontFamily: 'Ebrima'),
+                    )),
               ),
               new Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 60),
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/logo_branco.png'))),
-              )
+                  margin: const EdgeInsets.fromLTRB(0, 2, 0, 60),
+                  child: IconButton(
+                      onPressed: _toggle, icon: Icon(Icons.visibility)))
             ],
           ),
           new Container(

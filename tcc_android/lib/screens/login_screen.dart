@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../main.dart';
 
-class LoginScreen extends StatelessWidget {
+class Login extends StatefulWidget {
+  LoginScreen createState() => LoginScreen();
+}
+
+class LoginScreen extends State<Login> {
   @override
   String email = '';
   String senha = '';
   String user = '';
+  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +109,7 @@ class LoginScreen extends StatelessWidget {
                     senha = text;
                   },
                   //text field da senha
-                  obscureText: true,
+                  obscureText: _isObscure,
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     focusedBorder: UnderlineInputBorder(
@@ -112,8 +117,17 @@ class LoginScreen extends StatelessWidget {
                       color: Color.fromRGBO(252, 107, 18, 1),
                     )),
                     hintStyle: TextStyle(color: Colors.white),
-                    suffixIcon: Icon(Icons.visibility,
-                        color: Color.fromRGBO(252, 107, 18, 1)),
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isObscure ? Icons.visibility : Icons.visibility_off,
+                        color: Color.fromRGBO(252, 107, 18, 1),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isObscure = !_isObscure;
+                        });
+                      },
+                    ),
                     icon: Icon(
                       Icons.vpn_key,
                       color: Color.fromRGBO(252, 107, 18, 1),
@@ -195,5 +209,11 @@ class LoginScreen extends StatelessWidget {
             ],
           ),
         ));
+  }
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    throw UnimplementedError();
   }
 }
